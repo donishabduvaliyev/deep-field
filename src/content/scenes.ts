@@ -12,7 +12,7 @@ export type Line = { kind: "p"; text: string } | { kind: "meta"; text: string };
 
 export interface Scene {
   id: string;
-  slate: string;      // "Sc. 03 / ezkor"
+  slate: string;      // "Sc. 03 / `Tezkor"
   hud: string;        // short room name for the HUD
   title: string;      // supports <b>…</b> for the accent word
   lines: Line[];
