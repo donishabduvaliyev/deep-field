@@ -45,12 +45,12 @@ export const SCENES: Scene[] = [
     lens: 28, a: 0.098, b: 0.246,
   },
   {
-    id: "ezkor",
-    slate: "Sc. 03 / ezkor",
-    hud: "ezkor",
+    id: "SmartChair",
+    slate: "Sc. 03 / SmartChair",
+    hud: "SmartChair",
     title: "Booking with <b>nothing to download</b>.",
     lines: [
-      { kind: "p", text: "In Uzbekistan, Telegram isn't an app people have. It's <strong>the</strong> app. So ezkor lives inside the chat — salons, barbers, nails, spa. Browse, book, done." },
+      { kind: "p", text: "In Uzbekistan, Telegram isn't an app people have. It's <strong>the</strong> app. So SmartChair lives inside the chat — salons, barbers, nails, spa. Browse, book, done." },
       { kind: "meta", text: "React 19 · Vite · Tailwind · Telegram initData · Leaflet · uz / ru / en" },
     ],
     lens: 24, a: 0.246, b: 0.407,
@@ -117,10 +117,10 @@ export const FOCUS_KEYS: { p: number; d: number }[] = [
 ];
 
 export const CONTACT = [
-  { label: "Email", href: "mailto:hello@example.com" },
-  { label: "Telegram", href: "https://t.me/username" },
-  { label: "GitHub", href: "https://github.com/username" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/username" },
+  { label: "Email", href: "mailto:ilovedogskratos@gmail.com" },
+  { label: "Telegram", href: "https://t.me/+998949827070" },
+  { label: "GitHub", href: "https://github.com/donishabduvaliyev" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/donishabduvaliyev" },
 ];
 
-export const SIGNOFF = "Tashkent / Open to new work";
+export const SIGNOFF = "Namangan / Open to new work";
