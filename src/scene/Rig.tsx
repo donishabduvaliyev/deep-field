@@ -42,7 +42,7 @@ function focusAt(p: number) {
     const a = FOCUS_KEYS[i], b = FOCUS_KEYS[i + 1];
     if (p >= a.p && p <= b.p) {
       let t = (p - a.p) / (b.p - a.p);
-      t = t * t * (3 - 2 * t);            // focus pulls ease, they never snap
+      t = t * t * (3 - 2 * t);          
       return a.d + (b.d - a.d) * t;
     }
   }

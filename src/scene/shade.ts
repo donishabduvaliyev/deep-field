@@ -1,12 +1,6 @@
 import * as THREE from "three";
 
-/**
- * Flat colour makes every object a silhouette — a basin and a crate look
- * identical. So shading is baked into the geometry as vertex colours:
- * up-faces catch the overhead lamps and go warm, flanks fall off,
- * undersides go almost black. Costs nothing at runtime, and it is the
- * only reason any of this furniture reads as an object.
- */
+
 export function shade(geo: THREE.BufferGeometry): THREE.BufferGeometry {
   const g = geo.index ? geo.toNonIndexed() : geo;
   const nrm = g.attributes.normal.array as ArrayLike<number>;
