@@ -17,6 +17,9 @@ export default function App() {
   const [reduced] = useState(prefersReducedMotion);
   const [handheld] = useState(isHandheld);
   const [rolling, setRolling] = useState(false);
+  // set only if the 3D take is measured to be unworkably slow even at the
+  // lowest quality tier — a device too weak for WebGL, not a slow moment
+  const [tooWeak, setTooWeak] = useState(false);
   const audio = useAudio();
 
   // hand the mix the current room, once per change
@@ -32,9 +35,10 @@ export default function App() {
     return () => cancelAnimationFrame(id);
   }, [scroll, audio]);
 
-  // Phones and anyone who asked for less motion get the designed
-  // alternative, not a degraded version of this one.
-  if (handheld || reduced) {
+  // Phones, anyone who asked for less motion, and devices measured too
+  // weak to hold the 3D take get the designed alternative, not a
+  // degraded version of this one.
+  if (handheld || reduced || tooWeak) {
     return (
       <>
         <MobileFilm />
@@ -45,7 +49,8 @@ export default function App() {
 
   return (
     <>
-      <Scene scroll={scroll} pointer={pointer} reduced={reduced} />
+      <Scene scroll={scroll} pointer={pointer} reduced={reduced}
+             onCriticalPerf={() => setTooWeak(true)} />
       <Matte open={rolling} frame={frame} />
       <div id="runway" />
       <Scrim shown={rolling} />
